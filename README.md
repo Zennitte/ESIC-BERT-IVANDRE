@@ -6,7 +6,7 @@ O repositório inclui **código Python, modelos já treinados, arquivos de proce
 
 A classificação combina dois modelos: **BERTimbau**, um modelo de linguagem para português ajustado para esta tarefa, e **TF-IDF com regressão logística**, que usa características das palavras do texto. Cada modelo calcula probabilidades para as três classes; o resultado final usa a média dessas probabilidades, com **peso de 50% para cada componente**, e escolhe a classe de maior probabilidade.
 
-**Resultados de desenvolvimento do ensemble 50/50: acurácia interna média de 46,9510% e acurácia OOF de 46,3265%.** São avaliações distintas, detalhadas na seção de avaliação; nenhuma delas mede a acurácia do modelo final em um teste independente.
+**Resultados de desenvolvimento do ensemble 50/50: acurácia interna média de 47% (arredondada) e acurácia OOF de 46,3265%.** São avaliações distintas, detalhadas na seção de avaliação; nenhuma delas mede a acurácia do modelo final em um teste independente.
 
 A **inferência**, isto é, a aplicação dos modelos já treinados a textos para obter previsões, funciona em CPU com os arquivos locais. Não é necessário treinar novamente nem baixar o modelo de linguagem base para prever. Quem quiser reconstruir o treinamento pode usar `train.py`; esse procedimento é separado do uso cotidiano e exige GPU.
 
@@ -206,10 +206,10 @@ O teste predito histórico contém **276 c1, 300 c234 e 324 c5**. São previsõe
 
 | Avaliação do BERT + TF-IDF 50/50 | Acurácia | Macro F1 |
 |---|---:|---:|
-| **Média da validação interna nos cinco folds** | **46,9510%** | **46,6225%** |
+| **Média da validação interna nos cinco folds** | **47% (arredondada)** | **46,6225%** |
 | OOF de desenvolvimento | 46,3265% | 46,0589% |
 
-A **acurácia interna média** é a média das acurácias obtidas nas parcelas de validação interna (`checkpoint_validation`) dos cinco folds durante o desenvolvimento. Essas parcelas já haviam participado da seleção dos componentes, o que torna as métricas internas otimistas. A **acurácia OOF** é calculada agregando as previsões dos 17.068 exemplos das parcelas externas de desenvolvimento. Portanto, os dois números usam conjuntos e formas de agregação diferentes.
+A **acurácia interna média** é a média das acurácias obtidas nas parcelas de validação interna (`checkpoint_validation`) dos cinco folds durante o desenvolvimento. O valor de 47% está arredondado ao percentual inteiro mais próximo; o valor registrado no relatório é 46,9510%. Essas parcelas já haviam participado da seleção dos componentes, o que torna as métricas internas otimistas. A **acurácia OOF** é calculada agregando as previsões dos 17.068 exemplos das parcelas externas de desenvolvimento. Portanto, os dois números usam conjuntos e formas de agregação diferentes.
 
 Os valores internos acima correspondem à família `16a_equal`, isto é, ao ensemble BERT + TF-IDF 50/50 disponibilizado neste repositório. A fonte é a tabela de comparação do [relatório de ensembles](reports/stage16_ensemble.md). Eles descrevem os modelos de folds usados no desenvolvimento, não uma avaliação independente dos componentes finais treinados em todos os dados elegíveis.
 
