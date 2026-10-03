@@ -1,16 +1,34 @@
-# ESIC-BERT-IVANDRE — classificação de clareza e-SIC (V2)
+# ESIC-BERT-IVANDRE — classificação de clareza de respostas e-SIC
 
-Entrega autônoma para classificar textos de respostas e-SIC nas classes **c1, c234 e c5**, combinando **BERTimbau + TF-IDF/regressão logística com pesos 50/50**. Este repositório publica o conteúdo de `v2/deliverable/` na raiz: código, modelos treinados, tokenizer, dados, previsões e relatórios.
+Este projeto usa aprendizado de máquina para **classificar a clareza de textos de respostas a pedidos de acesso à informação do e-SIC**, o Sistema Eletrônico do Serviço de Informação ao Cidadão. A entrada do modelo é o texto de uma resposta; a saída é uma das três classes usadas na base de treinamento: **`c1`, `c234` ou `c5`**. O modelo aprende a prever esses rótulos a partir de exemplos previamente anotados.
 
-A inferência funciona em CPU com arquivos locais, sem retreinar e sem baixar o encoder base. A reconstrução do treino é opcional e exige GPU.
+O repositório inclui **código Python, modelos já treinados, arquivos de processamento do texto, dados de treinamento e teste, uma planilha com previsões e relatórios de avaliação**. Para começar, clone o repositório, baixe os pesos com Git LFS, instale as dependências e execute `predict.py`. Você pode classificar os textos de teste incluídos ou fornecer sua própria planilha com respostas ainda sem rótulos. Também é possível chamar o modelo diretamente em Python.
+
+A classificação combina dois modelos: **BERTimbau**, um modelo de linguagem para português ajustado para esta tarefa, e **TF-IDF com regressão logística**, que usa características das palavras do texto. Cada modelo calcula probabilidades para as três classes; o resultado final usa a média dessas probabilidades, com **peso de 50% para cada componente**, e escolhe a classe de maior probabilidade.
+
+A **inferência**, isto é, a aplicação dos modelos já treinados a textos para obter previsões, funciona em CPU com os arquivos locais. Não é necessário treinar novamente nem baixar o modelo de linguagem base para prever. Quem quiser reconstruir o treinamento pode usar `train.py`; esse procedimento é separado do uso cotidiano e exige GPU.
 
 ## Contexto geral
 
-A V2 investigou qualidade dos dados, duplicatas, conflitos de rótulos, políticas de limpeza e diferentes classificadores. O pacote escolhido usa a **política B**: remover cópias redundantes de texto exatamente igual com mesmo rótulo, mantendo conflitos. Os componentes finais foram ajustados em **18.813 exemplos originais**, incluindo o holdout histórico após a seleção, sem dados sintéticos.
+O problema tratado é a classificação de **respostas textuais**, usando como referência os rótulos de clareza presentes nos dados. O modelo recebe somente o texto informado: não consulta o pedido original, anexos ou outras informações que não estejam nesse texto. Seu resultado é uma previsão da classe de anotação, e a qualidade dessa previsão depende tanto dos exemplos de treinamento quanto do conteúdo disponível na resposta.
 
-Os nomes preservam a codificação da fonte: `c1` corresponde à categoria 1, `c234` agrupa as categorias 2, 3 e 4, e `c5` corresponde à categoria 5. A entrega não inclui a rubrica de anotação para definir operacionalmente cada nível; consulte a anotação de origem para interpretar esses níveis de clareza.
+As classes preservam a codificação da base:
 
-O ensemble duplo foi escolhido depois de comparar a OOF (*out-of-fold*: cada exemplo de desenvolvimento previsto por um modelo de fold que não o utilizou em seu ajuste). A escolha é exploratória. Este pacote contém a entrega final, não todo o ambiente dos experimentos anteriores. Referências históricas nos relatórios podem apontar para scripts e arquivos que não estão neste repositório.
+| Classe prevista | Correspondência na anotação |
+|---|---|
+| `c1` | Categoria 1 |
+| `c234` | Categorias 2, 3 e 4 agrupadas em uma única classe |
+| `c5` | Categoria 5 |
+
+O classificador não distingue as categorias 2, 3 e 4 individualmente. O repositório não inclui a rubrica com os critérios operacionais de anotação de cada categoria; portanto, os nomes das classes, por si só, não permitem determinar esses critérios. Para interpretar os rótulos em termos dos níveis de clareza definidos pelos anotadores, é necessário consultar a documentação de anotação da fonte.
+
+O desenvolvimento comparou classificadores e examinou duplicatas, conflitos de rótulos e alternativas de preparação dos dados. O treinamento final utiliza **18.813 exemplos originais**, obtidos de uma fonte de 20.092 linhas após a remoção de 1.279 cópias redundantes com texto exatamente igual e mesmo rótulo. Textos iguais com rótulos diferentes foram mantidos. Essa regra aparece nos relatórios como **política B**. Não foram usados exemplos sintéticos nos modelos disponibilizados.
+
+A combinação dos dois modelos, chamada de **ensemble**, foi escolhida com base em resultados de validação cruzada **OOF** (*out-of-fold*). Nesse procedimento, os dados de desenvolvimento são divididos em partes, chamadas de folds, e cada exemplo é previsto por um modelo que não o utilizou em seu ajuste. Após a seleção, os componentes finais foram treinados com todos os exemplos elegíveis, incluindo uma parcela anteriormente reservada para avaliação, chamada de holdout histórico.
+
+A acurácia OOF observada foi de **46,3265%**, mas a escolha do ensemble consultou esses mesmos resultados de desenvolvimento. Por isso, essa medida é exploratória e não representa uma confirmação independente do desempenho dos modelos finais. Os **900 textos de teste incluídos não têm gabarito**: sua planilha predita demonstra o uso do modelo, sem permitir calcular a acurácia de teste. A seção de avaliação apresenta as métricas e suas limitações em detalhe.
+
+Para usar o classificador, siga as seções de instalação e previsão abaixo. Para entender os dados e as decisões de desenvolvimento, consulte as seções de modelo, dados e avaliação, além dos relatórios incluídos. Esses relatórios preservam registros históricos e podem mencionar scripts ou arquivos de experimentos que não acompanham este repositório.
 
 ## Instalação
 
