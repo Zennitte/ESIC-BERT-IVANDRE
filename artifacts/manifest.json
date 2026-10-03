@@ -1,0 +1,21 @@
+{
+  "status": "frozen",
+  "files_sha256": {
+    "pipeline.json": "c542cf1fadfb2342b68ce569aa653ec7a8614fcb297ba92372a40b6e0efb1ed9",
+    "tfidf.joblib": "58749c87585a71e41f84e770d800f38dc704f62937b812a38f9f9945a8fbbe4f",
+    "bert/config.json": "a9869e5fdf3f7b182afce6da6e7d96b57583eab790954de4f92ddbbc86a5d7df",
+    "bert/model.safetensors": "02c98248b0b8b683b6705e2f74149677697360ae96a1b1ee39c0d0936462b780",
+    "bert/special_tokens_map.json": "3c3507f36dff57bce437223db3b3081d1e2b52ec3e56ee55438193ecb2c94dd6",
+    "bert/tokenizer.json": "45ccb3e514665f3b11b5e2a8e1a3e29765d94330bc7232aa46c4cdc485bc8881",
+    "bert/tokenizer_config.json": "7525d84e2d59af28db08243599eb1da698db5f415be9fc1f5a41332d27be405b",
+    "bert/vocab.txt": "69c28584c67a0e5018f85ca734aa272cc38e26b5dd0d33fffa28059299f21707"
+  },
+  "source_frozen_manifest_sha256": "506a615aa3e650dedc4a07a537ef86c46c7467b44b0a8ced88c47c0a3791ac23",
+  "weights": [
+    0.5,
+    0.5
+  ],
+  "training_rows": 18813,
+  "synthetic_rows": 0,
+  "independent_final_accuracy": null
+}

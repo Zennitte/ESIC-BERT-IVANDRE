@@ -1,0 +1,92 @@
+{
+  "published_date": "2026-10-03",
+  "source_directory": "v2/deliverable",
+  "destination_layout": "source package contents at repository root",
+  "original_package_manifest": {
+    "status": "complete",
+    "files_sha256": {
+      ".gitattributes": "c8a69e277e80a059e68e1eb99408b837178b010f088ec115347ba51076e49aaa",
+      ".gitignore": "633325c36adfa679234f55c8fc1bb4c35a2315f6a271550592cc83b94102a30f",
+      "config.json": "c58f2db376f7564fee52d114ee3cdebb90b87b9eab69dd501c9916049b6a768b",
+      "model.py": "e397e8abac1c09e62da314631968ad4630e75e1054a7cab9ec1f9ea8d2ba4671",
+      "predict.py": "8eb22553ee15d156447b74ba9ef89c58b4f0cec96d15b1be37a46f92121a953d",
+      "README.md": "c891a70753502bbf07d71eada0a95fd6d727d874078720f84c1e884d1c984a39",
+      "requirements.txt": "95297858ecaaf6efc9e9b49914fa8be73a3cf280eee70bee901506f40f81582a",
+      "train.py": "3d348d40ad8b72575eb020e01c684eb9e431e3c49151f70f356397e7420833c3",
+      "artifacts\\manifest.json": "0a7b3eac7d284aeca9f8333a03c984cb7b0fb1d70586db618a40abae01e9fffd",
+      "artifacts\\pipeline.json": "c542cf1fadfb2342b68ce569aa653ec7a8614fcb297ba92372a40b6e0efb1ed9",
+      "artifacts\\tfidf.joblib": "58749c87585a71e41f84e770d800f38dc704f62937b812a38f9f9945a8fbbe4f",
+      "data\\test.xlsx": "e626f030d4bf2be889fc41dd1fe9b81fb31f1f50f3ace50530d658683260449f",
+      "data\\train.xlsx": "84d81eae43ea0c92148fadf6c3f7e12c1f1bd7b22fef4c5fe07f0201bad14120",
+      "predictions\\test_predito.metadata.json": "6b2020ae1595306a11c32b8b9f6a821fb7f0599567852a589f137806aae196ad",
+      "predictions\\test_predito.xlsx": "4c34dfd617d2ac8e493f6e44d40574fd27bdf874f290570ca152e70efb31d603",
+      "provenance\\evaluation_metrics.json": "5fe7f55f8900064785557e450d26c6bb11b480c53d5cc274c0e12e0822dae9c8",
+      "provenance\\oof_selection.json": "cf435bafc0512e58aeeaa23462e367bc92286fb1e688379edcfdee895c177b32",
+      "provenance\\runtime_versions.json": "19c9d9635b20bf8f4455b33e90c901529d566f4e83c3fe62f6ca2c9a16219166",
+      "provenance\\training_ids.json": "ae22bae7bc5d0428b94d0ce5dbe70721c19049ffcef9f504315e66aaeb7e36c9",
+      "reports\\data_quality_metrics.json": "79c69daa8e8e743faaeca1e47dd1808db1c94abfb1171313ff090f76a9d8c8a3",
+      "reports\\data_quality_report.md": "45b43c7903e60c311246720a1103667baba4c53e38511b0dfb69ab53423b0e3e",
+      "reports\\stage16_ensemble.md": "23f0fd8f765cf586ff38842b09d507141815631fab87aa18a8c468bd5d97a05a",
+      "reports\\stage16_paired_analysis.md": "08a46b196ba1516babca7cb48977d39f10fb76f08b210edc73d50896d5fe4016",
+      "artifacts\\bert\\config.json": "a9869e5fdf3f7b182afce6da6e7d96b57583eab790954de4f92ddbbc86a5d7df",
+      "artifacts\\bert\\model.safetensors": "02c98248b0b8b683b6705e2f74149677697360ae96a1b1ee39c0d0936462b780",
+      "artifacts\\bert\\special_tokens_map.json": "3c3507f36dff57bce437223db3b3081d1e2b52ec3e56ee55438193ecb2c94dd6",
+      "artifacts\\bert\\tokenizer.json": "45ccb3e514665f3b11b5e2a8e1a3e29765d94330bc7232aa46c4cdc485bc8881",
+      "artifacts\\bert\\tokenizer_config.json": "7525d84e2d59af28db08243599eb1da698db5f415be9fc1f5a41332d27be405b",
+      "artifacts\\bert\\vocab.txt": "69c28584c67a0e5018f85ca734aa272cc38e26b5dd0d33fffa28059299f21707"
+    },
+    "created_utc": "2026-10-02T13:41:08.137906+00:00",
+    "source_package": "ensemble\\models\\oof_best_dual_equal",
+    "new_training": false,
+    "test_predictions": 900,
+    "independent_test_accuracy": null
+  },
+  "original_artifacts_manifest": {
+    "status": "frozen",
+    "files_sha256": {
+      "pipeline.json": "c542cf1fadfb2342b68ce569aa653ec7a8614fcb297ba92372a40b6e0efb1ed9",
+      "tfidf.joblib": "58749c87585a71e41f84e770d800f38dc704f62937b812a38f9f9945a8fbbe4f",
+      "bert\\config.json": "a9869e5fdf3f7b182afce6da6e7d96b57583eab790954de4f92ddbbc86a5d7df",
+      "bert\\model.safetensors": "02c98248b0b8b683b6705e2f74149677697360ae96a1b1ee39c0d0936462b780",
+      "bert\\special_tokens_map.json": "3c3507f36dff57bce437223db3b3081d1e2b52ec3e56ee55438193ecb2c94dd6",
+      "bert\\tokenizer.json": "45ccb3e514665f3b11b5e2a8e1a3e29765d94330bc7232aa46c4cdc485bc8881",
+      "bert\\tokenizer_config.json": "7525d84e2d59af28db08243599eb1da698db5f415be9fc1f5a41332d27be405b",
+      "bert\\vocab.txt": "69c28584c67a0e5018f85ca734aa272cc38e26b5dd0d33fffa28059299f21707"
+    },
+    "source_frozen_manifest_sha256": "506a615aa3e650dedc4a07a537ef86c46c7467b44b0a8ced88c47c0a3791ac23",
+    "weights": [
+      0.5,
+      0.5
+    ],
+    "training_rows": 18813,
+    "synthetic_rows": 0,
+    "independent_final_accuracy": null
+  },
+  "original_artifacts_manifest_sha256": "0a7b3eac7d284aeca9f8333a03c984cb7b0fb1d70586db618a40abae01e9fffd",
+  "published_artifacts_manifest_sha256": "fceff53edd56e43085ff047ed54c69b9c9cefa06070ff89223c869ea510a89e1",
+  "changes": [
+    "Expanded Portuguese README",
+    "Normalized artifact manifest paths to POSIX separators for Windows/Linux",
+    "Preserved exact bytes on Git checkout with .gitattributes",
+    "Added local environment and temporary output ignore rules",
+    "Declared threadpoolctl training dependency explicitly",
+    "Regenerated publication package manifest"
+  ],
+  "unchanged_payloads": [
+    "model.py",
+    "predict.py",
+    "train.py",
+    "config.json",
+    "BERT and tokenizer",
+    "TF-IDF pipeline",
+    "training and test data",
+    "historical predictions and metadata",
+    "historical reports and provenance"
+  ],
+  "historical_prediction_metadata_preserved": true,
+  "new_training": false,
+  "excluded_from_git": [
+    "__pycache__/",
+    "*.checkpoint.json"
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "status": "complete",
+  "rows": 900,
+  "input": "C:\\Users\\KABUM\\Documents\\BERT- Fine\\v2\\deliverable\\data\\test.xlsx",
+  "output": "C:\\Users\\KABUM\\Documents\\BERT- Fine\\v2\\deliverable\\predictions\\test_predito.xlsx",
+  "sheet": "test1",
+  "input_sha256": "e626f030d4bf2be889fc41dd1fe9b81fb31f1f50f3ace50530d658683260449f",
+  "output_sha256": "4c34dfd617d2ac8e493f6e44d40574fd27bdf874f290570ca152e70efb31d603",
+  "artifacts_manifest_sha256": "0a7b3eac7d284aeca9f8333a03c984cb7b0fb1d70586db618a40abae01e9fffd",
+  "class_distribution": {
+    "c234": 300,
+    "c5": 324,
+    "c1": 276
+  },
+  "device": "cuda",
+  "batch_size": 4,
+  "class_order": [
+    "c1",
+    "c234",
+    "c5"
+  ],
+  "weights": [
+    0.5,
+    0.5
+  ],
+  "new_training": false,
+  "labels_provided": false,
+  "accuracy": null,
+  "all_cells_verified": 1802,
+  "input_preserved": true,
+  "probabilities_verified": true,
+  "wall_seconds": 40.825869799999055,
+  "completed_utc": "2026-10-02T13:39:48.915623+00:00"
+}

@@ -1,0 +1,89 @@
+{
+  "model": "BERTimbau + TF-IDF 50/50",
+  "class_order": [
+    "c1",
+    "c234",
+    "c5"
+  ],
+  "weights": [
+    0.5,
+    0.5
+  ],
+  "pretrained_model_id": "neuralmind/bert-base-portuguese-cased",
+  "pretrained_revision": "94d69c95f98f7d5b2a8700c420230ae10def0baa",
+  "training_rows": 18813,
+  "source_rows": 20092,
+  "removed_redundant_exact_text_same_label": 1279,
+  "synthetic_rows": 0,
+  "training_data_sha256": "84d81eae43ea0c92148fadf6c3f7e12c1f1bd7b22fef4c5fe07f0201bad14120",
+  "original_train_sha256": "0e9219233664ac675fc47982bbc822acd3bb15d67fb7bfc26b67bec047e46818",
+  "test_data_sha256": "e626f030d4bf2be889fc41dd1fe9b81fb31f1f50f3ace50530d658683260449f",
+  "max_length": 512,
+  "default_device": "cpu",
+  "bert_training": {
+    "seed": 20260941,
+    "learning_rate": 2e-05,
+    "weight_decay": 0.01,
+    "scheduler": "linear",
+    "warmup_ratio": 0.1,
+    "micro_batch_size": 2,
+    "gradient_accumulation_steps": 4,
+    "optimizer_steps": 3557,
+    "steps_per_epoch": 2351,
+    "scheduler_total_steps": 4702,
+    "warmup_steps": 470,
+    "early_stopping": false
+  },
+  "tfidf": {
+    "vectorizer": {
+      "analyzer": "word",
+      "ngram_range": [
+        1,
+        2
+      ],
+      "min_df": 3,
+      "max_features": 100000,
+      "sublinear_tf": true,
+      "lowercase": true,
+      "norm": "l2"
+    },
+    "classifier": {
+      "C": 0.5,
+      "solver": "lbfgs",
+      "max_iter": 400,
+      "random_state": 20260924
+    }
+  },
+  "development_oof": {
+    "accuracy": 0.4632645887040075,
+    "macro_f1": 0.4605894562328195,
+    "weighted_f1": 0.46078190903382504,
+    "per_class_f1": {
+      "c1": 0.4587378640776699,
+      "c234": 0.39825098382160035,
+      "c5": 0.5247795207991883
+    },
+    "confusion_matrix": [
+      [
+        2268,
+        1666,
+        1461
+      ],
+      [
+        1406,
+        2277,
+        2134
+      ],
+      [
+        819,
+        1675,
+        3362
+      ]
+    ],
+    "ordinal_mae": 0.6703187250996016,
+    "extreme_error_rate": 0.1335833138036091,
+    "quadratic_weighted_kappa": 0.29098399159311095
+  },
+  "independent_final_accuracy": null,
+  "selection_used_oof": true
+}

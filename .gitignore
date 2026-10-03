@@ -1,0 +1,9 @@
+__pycache__/
+*.py[cod]
+*.checkpoint.json
+retrained_artifacts/
+PAUSE_REQUESTED
+.venv/
+venv/
+*.tmp
+*.tmp.xlsx

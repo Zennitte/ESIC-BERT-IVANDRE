@@ -1,0 +1,50 @@
+{
+  "status": "recorded",
+  "authorization": "Então foque na oof",
+  "created_utc": "2026-10-02T12:03:55.850703+00:00",
+  "primary_comparison_metric": "OOF accuracy",
+  "tie_break": "OOF macro_f1",
+  "selected_family": "16a_equal",
+  "original_inner_selected_family": "16b_weighted",
+  "oof": {
+    "accuracy": 0.4632645887040075,
+    "macro_f1": 0.4605894562328195,
+    "weighted_f1": 0.46078190903382504,
+    "per_class_f1": {
+      "c1": 0.4587378640776699,
+      "c234": 0.39825098382160035,
+      "c5": 0.5247795207991883
+    },
+    "confusion_matrix": [
+      [
+        2268,
+        1666,
+        1461
+      ],
+      [
+        1406,
+        2277,
+        2134
+      ],
+      [
+        819,
+        1675,
+        3362
+      ]
+    ],
+    "ordinal_mae": 0.6703187250996016,
+    "extreme_error_rate": 0.1335833138036091,
+    "quadratic_weighted_kappa": 0.29098399159311095
+  },
+  "weights": [
+    0.5,
+    0.5
+  ],
+  "target_met": false,
+  "selection_used_outer_results": true,
+  "independent_test": false,
+  "note": "Post-hoc exploratory choice on reused development OOF; does not replace the original internal selection audit.",
+  "final_model_independent_accuracy": null,
+  "model": "ensemble\\models\\oof_best_dual_equal",
+  "original_frozen_manifest_sha256": "eba08ea026aabcb61d0bd2f072281a0417aa313598beaae85ea0cf19a7dc83f0"
+}

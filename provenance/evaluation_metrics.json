@@ -1,0 +1,194 @@
+{
+  "development_oof": {
+    "accuracy": 0.4632645887040075,
+    "macro_f1": 0.4605894562328195,
+    "weighted_f1": 0.46078190903382504,
+    "per_class_f1": {
+      "c1": 0.4587378640776699,
+      "c234": 0.39825098382160035,
+      "c5": 0.5247795207991883
+    },
+    "confusion_matrix": [
+      [
+        2268,
+        1666,
+        1461
+      ],
+      [
+        1406,
+        2277,
+        2134
+      ],
+      [
+        819,
+        1675,
+        3362
+      ]
+    ],
+    "ordinal_mae": 0.6703187250996016,
+    "extreme_error_rate": 0.1335833138036091,
+    "quadratic_weighted_kappa": 0.29098399159311095
+  },
+  "paired_analysis": {
+    "status": "complete",
+    "authorization": "Pode fazer essa analise.",
+    "created_utc": "2026-10-02T13:16:23.362251+00:00",
+    "rows": 17068,
+    "comparison": {
+      "baseline": "TF-IDF fit B",
+      "ensemble": "BERT + TF-IDF 50/50",
+      "family": "16a_equal"
+    },
+    "correct_counts": {
+      "tfidf": 7681,
+      "ensemble": 7907,
+      "net_extra_correct": 226
+    },
+    "paired_counts": {
+      "both_correct": 6403,
+      "both_wrong": 7883,
+      "ensemble_only": 1504,
+      "tfidf_only": 1278
+    },
+    "accuracy": {
+      "tfidf": 0.45002343566908837,
+      "ensemble": 0.4632645887040075,
+      "delta": 0.013241153034919148,
+      "delta_percentage_points": 1.3241153034919149
+    },
+    "macro_f1": {
+      "tfidf": 0.4473507997805992,
+      "ensemble": 0.4605894562328195
+    },
+    "naive_row_mcnemar": {
+      "method": "exact two-sided binomial test on discordant correctness",
+      "statistic": 1278,
+      "discordant_rows": 2782,
+      "pvalue": 1.972008585806507e-05,
+      "limitation": "Assumes independent row pairs; protected duplicates and shared fold models violate strict independence. Descriptive sensitivity check, not primary confirmation."
+    },
+    "grouped_bootstrap": {
+      "method": "paired protected-component bootstrap stratified by outer fold; percentile CI",
+      "replicates": 20000,
+      "seed": 20261002,
+      "confidence_level": 0.95,
+      "protected_groups": 14712,
+      "largest_group_rows": 185,
+      "delta_ci": [
+        0.0057368281782444915,
+        0.02052385656853362
+      ],
+      "delta_ci_percentage_points": [
+        0.5736828178244492,
+        2.052385656853362
+      ],
+      "ci_excludes_zero": true,
+      "tfidf_accuracy_ci": [
+        0.4417427097491502,
+        0.45837765937446917
+      ],
+      "ensemble_accuracy_ci": [
+        0.4533165218823032,
+        0.47263693136245677
+      ],
+      "estimand": "Row-weighted pooled accuracy difference; group counts per fold fixed, replicate row counts may vary.",
+      "limitation": "Conditional on saved fold models and observed folds/groups. No refitting; no seed/training uncertainty; no correction for model choice on reused OOF. Groups cover only the observed protected similarity components."
+    },
+    "per_fold": [
+      {
+        "fold": 1,
+        "rows": 3446,
+        "protected_groups": 2971,
+        "counts": {
+          "both_correct": 1265,
+          "both_wrong": 1526,
+          "ensemble_only": 349,
+          "tfidf_only": 306
+        },
+        "tfidf_accuracy": 0.4558908879860708,
+        "ensemble_accuracy": 0.4683691236215902,
+        "delta_accuracy": 0.012478235635519443
+      },
+      {
+        "fold": 2,
+        "rows": 3334,
+        "protected_groups": 2951,
+        "counts": {
+          "both_correct": 1258,
+          "both_wrong": 1551,
+          "ensemble_only": 289,
+          "tfidf_only": 236
+        },
+        "tfidf_accuracy": 0.4481103779244151,
+        "ensemble_accuracy": 0.46400719856028794,
+        "delta_accuracy": 0.015896820635872826
+      },
+      {
+        "fold": 3,
+        "rows": 3332,
+        "protected_groups": 2942,
+        "counts": {
+          "both_correct": 1251,
+          "both_wrong": 1585,
+          "ensemble_only": 271,
+          "tfidf_only": 225
+        },
+        "tfidf_accuracy": 0.4429771908763505,
+        "ensemble_accuracy": 0.4567827130852341,
+        "delta_accuracy": 0.013805522208883553
+      },
+      {
+        "fold": 4,
+        "rows": 3399,
+        "protected_groups": 2918,
+        "counts": {
+          "both_correct": 1384,
+          "both_wrong": 1603,
+          "ensemble_only": 233,
+          "tfidf_only": 179
+        },
+        "tfidf_accuracy": 0.45984112974404234,
+        "ensemble_accuracy": 0.47572815533980584,
+        "delta_accuracy": 0.01588702559576346
+      },
+      {
+        "fold": 5,
+        "rows": 3557,
+        "protected_groups": 2930,
+        "counts": {
+          "both_correct": 1245,
+          "both_wrong": 1618,
+          "ensemble_only": 362,
+          "tfidf_only": 332
+        },
+        "tfidf_accuracy": 0.4433511385999438,
+        "ensemble_accuracy": 0.4517852122575204,
+        "delta_accuracy": 0.00843407365757661
+      }
+    ],
+    "independent_test": false,
+    "selected_using_oof": true,
+    "synthetic_rows": 0,
+    "new_training": false,
+    "source_sha256": "0e9219233664ac675fc47982bbc822acd3bb15d67fb7bfc26b67bec047e46818",
+    "split_sha256": "9bce050676821d1ced5cb04866c3d82166e50d2c54eb9daf5541839f66a0b195",
+    "near_pairs_sha256": "7aac5dd53a4ffb34d09920853255aad10cca5f15f2de69a4d44552df2ce81d81",
+    "prediction_files_sha256": {
+      "ensemble\\diagnostics\\tfidf\\fold1.csv": "10abbe24528c0c03850accf9c1323faad453a72533b8624105e68aeabaef8c9d",
+      "ensemble\\diagnostics\\16a_equal\\fold1.csv": "cae032e6af5dba76bbd9fb59e07595ef994117ad9ca65805cd1fb259c33a45f7",
+      "ensemble\\diagnostics\\tfidf\\fold2.csv": "01dede3e9eebb78b8afdc90bd8d9315addb2c262f15ee9e255fd48ece068d9c8",
+      "ensemble\\diagnostics\\16a_equal\\fold2.csv": "9f725b91988c2154bb00a2e211e83e50636afd78d0e4b7d245e485fc992c27ae",
+      "ensemble\\diagnostics\\tfidf\\fold3.csv": "e19fad6864b74726256712690d52bd47a5868cf2035293dadeb824ab4b0e7930",
+      "ensemble\\diagnostics\\16a_equal\\fold3.csv": "75bd4c28c5ea909619148c91de910d8d20a3b6b97491d19460a7222829842c8e",
+      "ensemble\\diagnostics\\tfidf\\fold4.csv": "40cd4a3995a031dd683a56521520554143ca66a8a0354a6633ccfb7a88258e66",
+      "ensemble\\diagnostics\\16a_equal\\fold4.csv": "2f1c78ea520e18791283afa06c9fccae4dc3af7eb4123aaa027a9cfe56666bb6",
+      "ensemble\\diagnostics\\tfidf\\fold5.csv": "ce36f570b0bc886e019dde5c00aa26f825795d1bdba5c6e83ced22f059f531fe",
+      "ensemble\\diagnostics\\16a_equal\\fold5.csv": "244950a49fac96bba8f32d7c9ae21d929c3f810d43c03e9cbc435262150608fd"
+    },
+    "paired_csv_sha256": "f71575b92d9e0d87b6142f10f7e380b867955f89ca75815d916959d6a709e6d5",
+    "bootstrap_file_sha256": "8d0a87ecb0016465b3e77b2469ea800bdd33bd06f4a7d1fbd95cad839cf1d1d9",
+    "script_sha256": "4fba368f221cfa5416d4f046f78199a165290a35fc31ff2945bcf22f4bb93d1f",
+    "wall_seconds": 13.750516400003107
+  },
+  "independent_final_accuracy": null
+}
