@@ -70,7 +70,8 @@
     "Preserved exact bytes on Git checkout with .gitattributes",
     "Added local environment and temporary output ignore rules",
     "Declared threadpoolctl training dependency explicitly",
-    "Regenerated publication package manifest"
+    "Regenerated publication package manifest",
+    "Removed user-directed OOF priority section and obsolete Stage 17 approval status from reports/stage16_ensemble.md"
   ],
   "unchanged_payloads": [
     "model.py",
@@ -81,7 +82,7 @@
     "TF-IDF pipeline",
     "training and test data",
     "historical predictions and metadata",
-    "historical reports and provenance"
+    "other historical reports and original provenance records"
   ],
   "historical_prediction_metadata_preserved": true,
   "new_training": false,

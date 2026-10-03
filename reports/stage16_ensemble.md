@@ -26,15 +26,7 @@ Pesos escolhidos em checkpoint_validation de cada fold; família escolhida pela 
 TF-IDF: baseline C=0,5 congelado, vocabulário/IDF e classificador ajustados apenas no fit B. BERT e XGBoost reutilizam modelos de folds já congelados. A validação interna já participou da seleção anterior dos componentes; suas métricas são otimistas. Desenvolvimento reutilizado não constitui teste independente.
 17.068 IDs OOF únicos; holdout histórico excluído da seleção. Final com 18.813 linhas B, incluindo holdout após seleção, sem sintéticos. Pesos finais são a média dos cinco vetores internos; OOF mede vetores por fold, não mede a versão final com pesos médios.
 Pacote recarregável: `ensemble\models\best_ensemble`. Modelos anteriores, datasets e splits preservados.
-Tempo desta execução: 336.1s. Etapa 17 aguarda autorização.
-
-## Prioridade OOF — orientação posterior do usuário
-
-Após a execução, o usuário orientou: “Então foque na oof”. A comparação principal passa a priorizar acurácia OOF, com Macro F1 OOF como desempate. A seleção interna original permanece registrada, incluindo o pacote triplo.
-
-Melhor ensemble OOF observado: **BERT + TF-IDF 50/50 (16a_equal)**; acurácia **46.3265%**, Macro F1 **46.0589%**. Pacote final recarregável congelado em `ensemble/models/oof_best_dual_equal/`, com os componentes finais já treinados em 18.813 linhas B. Não houve novo treino, mudança de dados ou otimização adicional dos pesos. Meta >=47% OOF não atingida.
-
-Essa escolha foi feita após consultar OOF reutilizada de desenvolvimento; é exploratória e precisa de avaliação independente para confirmação. Não é uma nova estimativa independente do pacote final.
+Tempo desta execução: 336.1s.
 
 ## Análise pareada autorizada
 
